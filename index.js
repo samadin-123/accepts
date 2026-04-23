@@ -86,9 +86,15 @@ Accepts.prototype.types = function (types_) {
 
   // support flattened arguments
   if (types && !Array.isArray(types)) {
-    types = new Array(arguments.length)
-    for (var i = 0; i < types.length; i++) {
-      types[i] = arguments[i]
+    // fast path: single argument
+    if (arguments.length === 1) {
+      types = [types]
+    } else {
+      // slow path: multiple arguments (varargs)
+      types = new Array(arguments.length)
+      for (var i = 0; i < types.length; i++) {
+        types[i] = arguments[i]
+      }
     }
   }
 
@@ -130,9 +136,15 @@ Accepts.prototype.encodings = function (encodings_) {
 
   // support flattened arguments
   if (encodings && !Array.isArray(encodings)) {
-    encodings = new Array(arguments.length)
-    for (var i = 0; i < encodings.length; i++) {
-      encodings[i] = arguments[i]
+    // fast path: single argument
+    if (arguments.length === 1) {
+      encodings = [encodings]
+    } else {
+      // slow path: multiple arguments (varargs)
+      encodings = new Array(arguments.length)
+      for (var i = 0; i < encodings.length; i++) {
+        encodings[i] = arguments[i]
+      }
     }
   }
 
@@ -163,9 +175,15 @@ Accepts.prototype.charsets = function (charsets_) {
 
   // support flattened arguments
   if (charsets && !Array.isArray(charsets)) {
-    charsets = new Array(arguments.length)
-    for (var i = 0; i < charsets.length; i++) {
-      charsets[i] = arguments[i]
+    // fast path: single argument
+    if (arguments.length === 1) {
+      charsets = [charsets]
+    } else {
+      // slow path: multiple arguments (varargs)
+      charsets = new Array(arguments.length)
+      for (var i = 0; i < charsets.length; i++) {
+        charsets[i] = arguments[i]
+      }
     }
   }
 
@@ -198,9 +216,15 @@ Accepts.prototype.languages = function (languages_) {
 
   // support flattened arguments
   if (languages && !Array.isArray(languages)) {
-    languages = new Array(arguments.length)
-    for (var i = 0; i < languages.length; i++) {
-      languages[i] = arguments[i]
+    // fast path: single argument
+    if (arguments.length === 1) {
+      languages = [languages]
+    } else {
+      // slow path: multiple arguments (varargs)
+      languages = new Array(arguments.length)
+      for (var i = 0; i < languages.length; i++) {
+        languages[i] = arguments[i]
+      }
     }
   }
 
