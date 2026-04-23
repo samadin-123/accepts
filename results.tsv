@@ -1,3 +1,4 @@
 thesis	attempt	metric	baseline	status	summary
 #1	thesis/1-cache-negotiator-instance-for-repeated-operations	719935.0000	715196.0000	discarded	WeakMap caching overhead exceeds benefit. 10-run avg: cached 719935 vs baseline 715196 (0.66%). Extended test baseline faster: 760649 vs 751880. Tests pass but below 1% threshold.
 #2	thesis/2-optimize-argument-flattening-with-fast-path	731953.0000	718422.0000	accepted	Added fast path for single argument case, avoiding Array allocation. 10-run avg: optimized 731953 vs baseline 718422 (1.88% improvement). All tests pass.
+#8	thesis/8-optimize-argument-flattening-with-slice-for-varargs	656455.0000	676000.0000	discarded	Replacing manual loop with Array.prototype.slice.call(arguments) reduced performance from 676,000 to 656,455 ops/sec (~2.9% regression). The manual loop with pre-allocated array is actually faster than slice.call() for small argument counts in modern V8.
