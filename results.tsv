@@ -1,1 +1,2 @@
 thesis	attempt	metric	baseline	status	summary
+#1	thesis/1-cache-negotiator-instance-for-repeated-operations	719935.0000	715196.0000	discarded	WeakMap caching overhead exceeds benefit. 10-run avg: cached 719935 vs baseline 715196 (0.66%). Extended test baseline faster: 760649 vs 751880. Tests pass but below 1% threshold.
